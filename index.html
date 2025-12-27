@@ -6,195 +6,19 @@
   <title>Shyla's Dream A Little Dream Foundation</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --blue: #2f5fa3;
-      --gold: #e3b54b;
-      --light: #f6f8fb;
-      --dark: #111;
-      --text: #333;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
-      line-height: 1.6;
-      background: #fff;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      color: #111;
-    }
-
-    a { text-decoration: none; color: inherit; }
-
-    /* NAV */
-    header {
-      position: sticky;
-      top: 0;
-      background: #fff;
-      border-bottom: 1px solid #e5e7eb;
-      z-index: 1000;
-    }
-
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav .brand {
-      font-weight: 600;
-      color: var(--blue);
-    }
-
-    .nav nav a {
-      margin-left: 1.5rem;
-      font-size: 0.95rem;
-    }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(rgba(47,95,163,0.75), rgba(47,95,163,0.75)), url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-      padding: 6rem 2rem;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      max-width: 760px;
-      margin: auto;
-      font-size: 1.1rem;
-    }
-
-    .hero .actions {
-      margin-top: 2rem;
-    }
-
-    .btn {
-      padding: 0.75rem 1.75rem;
-      border-radius: 999px;
-      font-weight: 600;
-      display: inline-block;
-      margin: 0.4rem;
-    }
-
-    .btn.primary { background: var(--gold); color: #000; }
-    .btn.outline { border: 2px solid #fff; color: #fff; }
-
-    section { padding: 4rem 2rem; }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    /* WHY */
-    .why {
-      background: var(--light);
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .pill {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1rem 1.25rem;
-      margin-bottom: 0.75rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    /* WHAT WE DO */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 2rem;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-    }
-
-    /* IMPACT */
-    .impact {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-    }
-
-    .metrics {
-      display: flex;
-      gap: 3rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .metric { font-weight: 600; }
-
-    /* HELP */
-    .help { background: var(--light); }
-
-    /* CTA */
-    .cta {
-      background: var(--blue);
-      color: #fff;
-      text-align: center;
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--dark);
-      color: #ddd;
-      padding: 3rem 2rem;
-    }
-
-    footer .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-    }
-
-    footer a { color: #bbb; display: block; margin-top: 0.4rem; }
-
-    @media (max-width: 768px) {
-      .why-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 2.3rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <header>
   <div class="nav">
-    <div class="brand">Building a Lasting Legacy</div>
+    <a class="brand" href="index.html">Building a Lasting Legacy</a>
     <nav>
-      <a href="#board">Meet the Board</a>
-      <a href="#help">Get Involved</a>
-      <a href="#donate">Donate</a>
-      <a href="#contact">Contact Us</a>
+      <a href="index.html">Home</a>
+      <a href="board.html">Meet the Board</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="donate.html">Donate</a>
+      <a href="contact.html">Contact Us</a>
     </nav>
   </div>
 </header>
@@ -203,8 +27,8 @@
   <h1>Shyla's Dream A Little Dream Foundation</h1>
   <p>Facilitating real estate investing, development, entertainment, and educational opportunities in urban and rural communities.</p>
   <div class="actions">
-    <a class="btn primary">Support the Dream</a>
-    <a class="btn outline">Explore Our Impact</a>
+    <a class="btn primary" href="donate.html">Support the Dream</a>
+    <a class="btn outline" href="board.html">Explore Our Impact</a>
   </div>
 </section>
 
@@ -255,7 +79,7 @@
 
 <section class="cta">
   <h2>Ready to Help Dreams Take Root?</h2>
-  <a class="btn primary">Join the Dream</a>
+  <a class="btn primary" href="get-involved.html">Join the Dream</a>
 </section>
 
 <footer id="contact">
@@ -266,7 +90,9 @@
     </div>
     <div>
       <strong>Quick Links</strong>
-      <a>About</a><a>Programs</a><a>Get Involved</a>
+      <a href="index.html">About</a>
+      <a href="board.html">Programs</a>
+      <a href="get-involved.html">Get Involved</a>
     </div>
     <div>
       <strong>Contact</strong>
