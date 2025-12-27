@@ -4,70 +4,68 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shyla's Dream A Little Dream Foundation</title>
-  <meta name="description" content="Shyla's Dream A Little Dream Foundation is a nonprofit real estate investment and development organization focused on building dreams through community-centered housing and development." />
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --dream-blue: #2C5AA0;
-      --warm-gold: #E0B04F;
-      --soft-cloud: #F5F7FA;
-      --charcoal: #2B2B2B;
-      --growth-green: #4CAF7D;
+      --blue: #2f5fa3;
+      --gold: #e3b54b;
+      --light: #f6f8fb;
+      --dark: #111;
+      --text: #333;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Inter', sans-serif;
-      color: var(--charcoal);
-      background-color: #ffffff;
+      color: var(--text);
       line-height: 1.6;
+      background: #fff;
     }
 
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
+      color: #111;
     }
 
     a { text-decoration: none; color: inherit; }
 
-    /* Header */
+    /* NAV */
     header {
-      background: #ffffff;
-      border-bottom: 1px solid #eaeaea;
-      padding: 1rem 2rem;
       position: sticky;
       top: 0;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
       z-index: 1000;
     }
 
     .nav {
       max-width: 1200px;
       margin: auto;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .logo {
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: var(--dream-blue);
+    .nav .brand {
+      font-weight: 600;
+      color: var(--blue);
     }
 
-    nav a {
+    .nav nav a {
       margin-left: 1.5rem;
-      font-weight: 500;
+      font-size: 0.95rem;
     }
 
-    /* Hero */
+    /* HERO */
     .hero {
-      background: linear-gradient(rgba(44,90,160,0.7), rgba(44,90,160,0.7)), url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=80');
+      background: linear-gradient(rgba(47,95,163,0.75), rgba(47,95,163,0.75)), url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1600&q=80');
       background-size: cover;
       background-position: center;
-      color: #ffffff;
+      color: #fff;
       padding: 6rem 2rem;
       text-align: center;
     }
@@ -78,121 +76,112 @@
     }
 
     .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
+      max-width: 760px;
       margin: auto;
+      font-size: 1.1rem;
     }
 
-    .hero .buttons {
+    .hero .actions {
       margin-top: 2rem;
     }
 
     .btn {
-      display: inline-block;
-      padding: 0.8rem 1.6rem;
-      border-radius: 30px;
+      padding: 0.75rem 1.75rem;
+      border-radius: 999px;
       font-weight: 600;
-      margin: 0.5rem;
+      display: inline-block;
+      margin: 0.4rem;
     }
 
-    .btn-primary {
-      background: var(--warm-gold);
-      color: #000;
-    }
+    .btn.primary { background: var(--gold); color: #000; }
+    .btn.outline { border: 2px solid #fff; color: #fff; }
 
-    .btn-secondary {
-      border: 2px solid #ffffff;
-      color: #ffffff;
-    }
-
-    /* Sections */
-    section {
-      padding: 4rem 2rem;
-    }
+    section { padding: 4rem 2rem; }
 
     .container {
       max-width: 1100px;
       margin: auto;
     }
 
-    .split {
+    /* WHY */
+    .why {
+      background: var(--light);
+    }
+
+    .why-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: 2fr 1fr;
       gap: 2rem;
       align-items: center;
     }
 
-    /* Cards */
+    .pill {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    /* WHAT WE DO */
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
     }
 
     .card {
-      background: var(--soft-cloud);
+      background: #fff;
+      border-radius: 14px;
       padding: 2rem;
-      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
     }
 
-    /* Impact */
+    /* IMPACT */
     .impact {
-      background: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      color: #ffffff;
-      position: relative;
-    }
-
-    .impact::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-    }
-
-    .impact .container {
-      position: relative;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
     }
 
     .metrics {
       display: flex;
+      gap: 3rem;
+      margin-top: 1.5rem;
       flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
     }
 
-    .metric {
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
+    .metric { font-weight: 600; }
+
+    /* HELP */
+    .help { background: var(--light); }
 
     /* CTA */
     .cta {
-      background: var(--dream-blue);
-      color: #ffffff;
+      background: var(--blue);
+      color: #fff;
       text-align: center;
     }
 
-    /* Footer */
+    /* FOOTER */
     footer {
-      background: #111;
-      color: #ffffff;
+      background: var(--dark);
+      color: #ddd;
       padding: 3rem 2rem;
     }
 
-    footer .container {
+    footer .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 2rem;
     }
 
-    footer a {
-      display: block;
-      margin-top: 0.5rem;
-      color: #cccccc;
-    }
+    footer a { color: #bbb; display: block; margin-top: 0.4rem; }
 
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2.2rem; }
+    @media (max-width: 768px) {
+      .why-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.3rem; }
     }
   </style>
 </head>
@@ -200,73 +189,60 @@
 
 <header>
   <div class="nav">
-    <div class="logo">Shyla's Dream A Little Dream Foundation</div>
+    <div class="brand">Building a Lasting Legacy</div>
     <nav>
-      <a href="#about">About</a>
-      <a href="#programs">Programs</a>
-      <a href="#impact">Impact</a>
-      <a href="#get-involved">Get Involved</a>
-      <a href="#contact">Contact</a>
+      <a href="#board">Meet the Board</a>
+      <a href="#help">Get Involved</a>
+      <a href="#donate">Donate</a>
+      <a href="#contact">Contact Us</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
-  <h1>Dream a Little Dream.<br>Build a Lasting Legacy.</h1>
-  <p>We invest in real estate to strengthen communities, create opportunity, and transform dreams into foundations.</p>
-  <div class="buttons">
-    <a href="#get-involved" class="btn btn-primary">Support the Dream</a>
-    <a href="#impact" class="btn btn-secondary">Explore Our Impact</a>
+  <h1>Shyla's Dream A Little Dream Foundation</h1>
+  <p>Facilitating real estate investing, development, entertainment, and educational opportunities in urban and rural communities.</p>
+  <div class="actions">
+    <a class="btn primary">Support the Dream</a>
+    <a class="btn outline">Explore Our Impact</a>
   </div>
 </section>
 
-<section id="about">
-  <div class="container split">
+<section id="about" class="why">
+  <div class="container why-grid">
     <div>
       <h2>Why We Exist</h2>
-      <p>Shyla’s Dream A Little Dream Foundation is a nonprofit real estate investment and development organization committed to revitalizing neighborhoods and expanding access to housing stability and generational opportunity.</p>
+      <p>Established in 2025, to help eliminate urban decay and rural blight; Shyla’s Dream A Little Dream Foundation is a nonprofit real estate investment and development organization. We are committed to revitalizing neighborhoods and expanding access to housing stability and generational opportunity. The foundation holds the belief that housing is a right, not a privilege and that all people deserve to have a safe place to live and thrive. We also believe education and careers are the key to success. Lastly, we believe families should have tasteful entertainment venues in the neighborhoods in which they live and work.</p>
     </div>
     <div>
-      <div class="card">🏠 Purpose-Driven Housing</div>
-      <div class="card">🌱 Community-Centered Development</div>
-      <div class="card">✨ Dream-Fueled Investment</div>
+      <h3>Values</h3>
+      <div class="pill">🏗 Growth & Expansion</div>
+      <div class="pill">🌱 Equity</div>
+      <div class="pill">🏢 Thriving Communities</div>
+      <div class="pill">🧸 Childhood Innocence</div>
     </div>
   </div>
 </section>
 
-<section id="programs" style="background:#f5f7fa;">
+<section id="programs">
   <div class="container">
     <h2>What We Do</h2>
     <div class="cards">
-      <div class="card">
-        <h3>Community Development</h3>
-        <p>Revitalizing underinvested neighborhoods through thoughtful, sustainable real estate development.</p>
-      </div>
-      <div class="card">
-        <h3>Nonprofit Real Estate Investing</h3>
-        <p>Deploying capital responsibly to generate long-term community benefit.</p>
-      </div>
-      <div class="card">
-        <h3>Dream Pathways</h3>
-        <p>Supporting families and individuals on their journey to housing stability and ownership.</p>
-      </div>
+      <div class="card"><h3>Community Development</h3><p>Revitalizing underinvested neighborhoods through thoughtful, sustainable real estate development.</p></div>
+      <div class="card"><h3>Nonprofit Real Estate Investing</h3><p>Deploying capital responsibly to generate long-term community benefit.</p></div>
+      <div class="card"><h3>Dream Pathways</h3><p>Supporting families and individuals on their journey to housing stability and ownership.</p></div>
     </div>
   </div>
 </section>
 
 <section id="impact" class="impact">
   <div class="container">
-    <h2>Dreams in Motion</h2>
-    <p>Every project we touch reflects a commitment to dignity, stability, and future possibility.</p>
-    <div class="metrics">
-      <div class="metric">25+ Homes Developed</div>
-      <div class="metric">100+ Families Supported</div>
-      <div class="metric">5 Communities Revitalized</div>
-    </div>
+    <h2>Vision</h2>
+    <p>To create thriving, safe, urban and rural communities nationwide.</p>
   </div>
 </section>
 
-<section id="get-involved">
+<section id="help" class="help">
   <div class="container">
     <h2>How You Can Help</h2>
     <div class="cards">
@@ -278,26 +254,22 @@
 </section>
 
 <section class="cta">
-  <div class="container">
-    <h2>Ready to Help Dreams Take Root?</h2>
-    <a href="#contact" class="btn btn-primary">Join the Dream</a>
-  </div>
+  <h2>Ready to Help Dreams Take Root?</h2>
+  <a class="btn primary">Join the Dream</a>
 </section>
 
 <footer id="contact">
-  <div class="container">
+  <div class="container grid">
     <div>
-      <h3>Shyla's Dream A Little Dream Foundation</h3>
+      <strong>Shyla's Dream A Little Dream Foundation</strong>
       <p>Building stability. Creating opportunity. One dream at a time.</p>
     </div>
     <div>
-      <h4>Quick Links</h4>
-      <a href="#about">About</a>
-      <a href="#programs">Programs</a>
-      <a href="#get-involved">Get Involved</a>
+      <strong>Quick Links</strong>
+      <a>About</a><a>Programs</a><a>Get Involved</a>
     </div>
     <div>
-      <h4>Contact</h4>
+      <strong>Contact</strong>
       <p>Email: info@dreamalittledream.org</p>
       <p>© 2025 All Rights Reserved</p>
     </div>
