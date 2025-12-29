@@ -4,6 +4,10 @@
   --light: #f6f8fb;
   --dark: #111;
   --text: #333;
+  --bright-red: #ff5c5c;
+  --bright-blue: #4ea5ff;
+  --bright-green: #2ecc71;
+  --bright-yellow: #ffd93d;
 }
 
 * {
@@ -54,14 +58,14 @@ header {
 }
 
 .brand-logo {
-  height: 52px;
+  height: 64px;
   width: auto;
   display: block;
 }
 
 .brand-title {
   font-weight: 600;
-  color: var(--blue);
+  color: var(--bright-green);
   white-space: nowrap;
 }
 
@@ -140,6 +144,26 @@ section {
   padding: 1rem 1.25rem;
   margin-bottom: 0.75rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.pill.growth {
+  background: var(--bright-red);
+  color: #fff;
+}
+
+.pill.equity {
+  background: var(--bright-blue);
+  color: #fff;
+}
+
+.pill.communities {
+  background: var(--bright-green);
+  color: #fff;
+}
+
+.pill.innocence {
+  background: var(--bright-yellow);
+  color: #111;
 }
 
 /* WHAT WE DO */
