@@ -1,6 +1,9 @@
 :root {
   --blue: #2f5fa3;
   --gold: #e3b54b;
+  --green: #2dbf7f;
+  --red: #e34f4f;
+  --sun: #f5d76a;
   --light: #f6f8fb;
   --dark: #111;
   --text: #333;
@@ -16,12 +19,33 @@ body {
   font-family: 'Inter', sans-serif;
   color: var(--text);
   line-height: 1.6;
-  background: #fff;
+  background: radial-gradient(circle at 15% 20%, rgba(227, 181, 75, 0.12), transparent 35%),
+    radial-gradient(circle at 80% 10%, rgba(47, 95, 163, 0.12), transparent 30%),
+    radial-gradient(circle at 70% 80%, rgba(45, 191, 127, 0.12), transparent 38%),
+    #fff;
 }
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
   color: #111;
+}
+
+h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.35rem;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--red), var(--sun), var(--green));
+  opacity: 0.8;
 }
 
 a {
@@ -33,9 +57,10 @@ a {
 header {
   position: sticky;
   top: 0;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid #e5e7eb;
   z-index: 1000;
+  backdrop-filter: blur(10px);
 }
 
 .nav {
@@ -68,11 +93,33 @@ header {
 .nav nav a {
   margin-left: 1.5rem;
   font-size: 0.95rem;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--red));
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+.nav nav a:hover {
+  color: var(--blue);
+}
+
+.nav nav a:hover::after {
+  width: 100%;
 }
 
 /* HERO */
 .hero {
-  background: linear-gradient(rgba(47,95,163,0.75), rgba(47,95,163,0.75)), url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1600&q=80');
+  background: linear-gradient(115deg, rgba(47, 95, 163, 0.82), rgba(227, 79, 79, 0.65), rgba(45, 191, 127, 0.72)), url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1600&q=80');
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -89,6 +136,7 @@ header {
   max-width: 760px;
   margin: auto;
   font-size: 1.1rem;
+  opacity: 0.95;
 }
 
 .hero .actions {
@@ -101,16 +149,29 @@ header {
   font-weight: 600;
   display: inline-block;
   margin: 0.4rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
 }
 
 .btn.primary {
-  background: var(--gold);
-  color: #000;
+  background: linear-gradient(135deg, var(--blue), var(--red), var(--green));
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(47, 95, 163, 0.35);
 }
 
 .btn.outline {
-  border: 2px solid #fff;
+  border: 2px solid rgba(255, 255, 255, 0.8);
   color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(227, 79, 79, 0.25);
+}
+
+.btn:active {
+  transform: translateY(0);
+  filter: brightness(0.95);
 }
 
 section {
@@ -135,11 +196,12 @@ section {
 }
 
 .pill {
-  background: #fff;
+  background: linear-gradient(90deg, rgba(47, 95, 163, 0.08), rgba(45, 191, 127, 0.12));
   border-radius: 12px;
   padding: 1rem 1.25rem;
   margin-bottom: 0.75rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border: 1px solid rgba(227, 79, 79, 0.12);
 }
 
 /* WHAT WE DO */
@@ -154,11 +216,39 @@ section {
   border-radius: 14px;
   padding: 2rem;
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #eef1f7;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(227, 79, 79, 0.08), rgba(245, 215, 106, 0.12), rgba(45, 191, 127, 0.1));
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.card h3 {
+  position: relative;
+  z-index: 1;
+  color: var(--blue);
+}
+
+.card p {
+  position: relative;
+  z-index: 1;
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 /* IMPACT */
 .impact {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=80');
+  background: linear-gradient(145deg, rgba(0,0,0,0.72), rgba(227,79,79,0.4), rgba(45,191,127,0.3)), url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=80');
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -182,9 +272,10 @@ section {
 
 /* CTA */
 .cta {
-  background: var(--blue);
+  background: linear-gradient(120deg, var(--blue), var(--red), var(--green));
   color: #fff;
   text-align: center;
+  box-shadow: 0 -12px 40px rgba(47, 95, 163, 0.25);
 }
 
 /* BOARD */
